@@ -1,0 +1,136 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.typeNamePlural: 'FX Sweep'
+@UI.headerInfo.title.type: #STANDARD
+@UI.textArrangement:#TEXT_LAST
+annotate entity ZC_FCYPLSWEEP
+  with 
+{
+// Filter Parameters 
+
+//Ledger*
+  @UI.selectionField: [ {
+    position: 1
+  } ]
+  @UI.lineItem: [ {
+    position: 3 ,
+    label: 'Ledger'  
+  } ] 
+  @Consumption.valueHelpDefinition: [{
+    entity: {
+      name: 'I_Ledger',
+      element: 'Ledger'
+    }
+  }]
+  @Consumption.filter.mandatory: true    
+  SourceLedger; 
+  
+//Company Code*
+  @UI.selectionField: [{
+    position: 2
+  }]
+  @UI.lineItem: [ {
+    position: 4 ,
+    label: 'Company Code'  
+  } ]
+  @Consumption.valueHelpDefinition: [{
+    entity: {
+      name: 'I_JournalEntryCompanyCodeVH',
+      element: 'CompanyCode' },
+    additionalBinding: [{ localElement: 'CompanyCodeCurrency',
+                               element: 'Currency', usage: #FILTER_AND_RESULT }]    
+  }]
+  @Consumption.filter.mandatory: true 
+  CompanyCode;
+
+//Run Date*
+  @UI.selectionField: [ {
+    position: 3
+  } ]
+  @Consumption.filter.mandatory: true
+  @Consumption.filter.selectionType: #INTERVAL
+  RunDate;  
+
+// Run ID
+  @UI.lineItem: [ {
+    position: 1 ,
+    label: 'Run ID'  
+  } ]   
+  BatchInputSession;
+  
+// Run Date & Time  
+  @UI.lineItem: [ {
+    position: 2 ,
+    label: 'Run Date & Time'  
+  } ] 
+  RunDateTime;
+  
+//Accounting Document - Optional
+   @UI.lineItem: [ {
+    position: 5 ,
+    label: 'Document Number'  
+  } ]
+  @Consumption.valueHelpDefinition: [{
+    entity: {
+      name: 'I_JournalEntryStdVH',
+      element: 'AccountingDocument'
+    }
+  }]
+  AccountingDocument;
+  
+// Source Profit Centre
+  @UI.lineItem: [ {
+    position: 6,
+    label : 'Source Profit Centre'
+  } ]
+  SourceProfitCenter;   
+  
+  
+// Transaction Currency Amount
+  @UI.lineItem: [ {
+    position: 7,
+    label: 'Amount In TCurr'
+  } ]  
+  AmountInTransactionCurrency;
+  
+// CompanyCode Currency Amount
+  @UI.lineItem: [ {
+    position: 8,
+    label: 'Amount In CCCrcy'
+  } ]   
+  AmountInCompanyCodeCurrency;   
+
+// Group Currency Amount
+  @UI.lineItem: [ {
+    position: 9,
+    label: 'Amount In GCrcy'
+  } ]   
+  AmountInGlobalCurrency;  
+  
+//Target Account
+  @UI.lineItem: [ {
+    position: 10,
+    label: 'Target Account'
+  } ]  
+  TargetAccount;
+  
+//Target Profit Center  
+  @UI.lineItem: [ {
+    position: 11,
+    label: 'Target Profit Center'
+  } ]   
+  TargetProfitCenter;
+
+// Offset Account
+  @UI.lineItem: [ {
+    position: 12,
+    label: 'Offset Account'
+  } ] 
+  OffsettingAccount;
+// Offset Profit Center 
+  @UI.lineItem: [ {
+    position: 13,
+    label: 'Offset Profit Center'
+  } ]  
+  @EndUserText.label: 'Offset Profit Center'
+  OffsetProfitCenter;
+}

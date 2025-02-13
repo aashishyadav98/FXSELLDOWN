@@ -1,0 +1,15 @@
+@Metadata.layer: #CORE
+annotate entity ZC_FXS_EXCL_PRCTR
+  with 
+{
+  @UI.lineItem: [ {
+    position: 1 ,
+    label: 'Company Code'  
+  } ]
+  CompanyCode;
+  @UI.lineItem: [ {
+    position: 6,
+    label : 'Excluded Profit Center'
+  } ]
+  ProfitCenter;
+}

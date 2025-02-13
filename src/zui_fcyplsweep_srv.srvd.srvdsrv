@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service definition for FCY P&L Sweep'
+define service ZUI_FCYPLSWEEP_SRV {
+  expose ZC_FCYPLSWEEP;
+  expose ZC_FXS_EXCL_PRCTR;
+}

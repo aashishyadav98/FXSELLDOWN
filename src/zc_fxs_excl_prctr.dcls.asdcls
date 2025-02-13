@@ -1,0 +1,11 @@
+@EndUserText.label: 'Mapping role for ZC_FXS_EXCL_PRCTR'
+@MappingRole: true
+define role ZC_FXS_EXCL_PRCTR {
+  grant
+    select
+      on
+        ZC_FXS_EXCL_PRCTR
+          where
+            inheriting conditions from entity ZI_FXS_EXCL_PRCTR;
+            
+}

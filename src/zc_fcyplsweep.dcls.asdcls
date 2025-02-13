@@ -1,0 +1,10 @@
+@EndUserText.label: 'Mapping role for ZC_FCYPLSWEEP'
+@MappingRole: true
+define role ZC_FCYPLSWEEP {
+  grant 
+    select
+      on
+        ZC_FCYPLSWEEP
+          where
+            inheriting conditions from entity ZI_FCYPLSWEEP;    
+}

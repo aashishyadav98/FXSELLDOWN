@@ -1,0 +1,11 @@
+@EndUserText.label: 'Mapping role for ZI_FXS_EXCL_PRCTR'
+@MappingRole: true
+define role ZI_FXS_EXCL_PRCTR {
+  grant 
+    select
+      on
+        ZI_FXS_EXCL_PRCTR
+            where ( CompanyCode ) = aspect pfcg_auth (F_BKPF_BUK, BUKRS,   ACTVT = '03')
+            AND   (  )            = aspect pfcg_auth( GLE_MCA, ACTVT = '03' );
+            
+}

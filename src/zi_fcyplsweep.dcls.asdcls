@@ -1,0 +1,12 @@
+@EndUserText.label: 'Mapping role for ZI_FCYPLSWEEP'
+@MappingRole: true
+define role ZI_FCYPLSWEEP {
+  grant 
+    select
+      on
+        ZI_FCYPLSWEEP
+          where ( Ledger )      = aspect pfcg_auth (F_FAGL_LDR, GLRLDNR, ACTVT = '03')
+            AND ( CompanyCode ) = aspect pfcg_auth (F_BKPF_BUK, BUKRS,   ACTVT = '03')
+            AND (  )            = aspect pfcg_auth( GLE_MCA, ACTVT = '03' );
+            
+}
