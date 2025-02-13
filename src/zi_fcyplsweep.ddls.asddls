@@ -1,5 +1,5 @@
 @AbapCatalog.viewEnhancementCategory: [#NONE]
-@AccessControl.authorizationCheck: #NOT_REQUIRED
+@AccessControl.authorizationCheck: #CHECK
 @EndUserText.label: 'Interface view for MCA FX Sweep'
 @Metadata.ignorePropagatedAnnotations: true
 @ObjectModel.usageType:{
