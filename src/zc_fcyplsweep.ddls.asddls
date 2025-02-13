@@ -1,6 +1,6 @@
 @AbapCatalog.viewEnhancementCategory: [ #NONE ]
 
-@AccessControl.authorizationCheck: #NOT_REQUIRED
+@AccessControl.authorizationCheck: #CHECK
 
 @EndUserText.label: 'Consumption View for MCA FX Sweep'
 
